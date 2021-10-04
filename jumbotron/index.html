@@ -47,7 +47,7 @@
         </div>
     </div>
     <div class="ui mobile only padded grid">
-        <div class="ui top fixed borderless fluid inverted huge menu">
+        <div class="ui top fixed borderless fluid inverted huge menu" id="headderBar">
             <a class="header item">成功大學數學系圖書室</a>
             <div class="right menu">
                 <div class="item">
@@ -146,15 +146,12 @@
             <a href="mailto:mathlib@math.ncku.edu.tw">服務信箱</a>
         </footer>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $(".ui.toggle.button").click(function () {
-                $(".mobile.only.grid .ui.vertical.menu").toggle(100);
-            });
-        });
-    </script>
+    <div id="aLotOFjs" style="display: none;">
+        <!--請注意:所有script的順序都是嚴格要求的-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+        <script src="./js/index.js"></script>
+    </div>
 </body>
 
 </html>
