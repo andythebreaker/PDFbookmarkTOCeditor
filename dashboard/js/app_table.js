@@ -65,6 +65,7 @@ function totalPriceFormatter(data) {
 }
 
 function initTable() {
+    //do-not feed data with "js array" aka "data method" in document!
     $table.bootstrapTable('destroy').bootstrapTable({
         height: 550,
         locale: $('#locale').val(),
