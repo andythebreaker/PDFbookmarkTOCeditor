@@ -1,6 +1,6 @@
 var swiper = new Swiper('.swiper-container', {
     slidesPerView: 1,
-    spaceBetween: 30,
+    spaceBetween: 0,
     slidesPerGroup: 1,
     loop: true,
     loopFillGroupWithBlank: true,
@@ -9,7 +9,7 @@ var swiper = new Swiper('.swiper-container', {
       clickable: true,
     },
     autoplay: {
-      delay: 2500,
+      delay: 250000,
       disableOnInteraction: false,
     },
     navigation: {
