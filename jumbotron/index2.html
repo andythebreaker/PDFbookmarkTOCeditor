@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=no" />
+    <meta name="description" content="修改的部分_描述文字" />
+    <meta name="keywords" content="修改的部分_關鍵字1, 修改的部分_關鍵字2, 修改的部分_關鍵字3, 修改的部分_關鍵字4" />
+    <meta name="author" content="修改的部分_作者1" />
+    <meta name="theme-color" content="#DDB98B" />
+    <title>成大數學系圖書館</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+        type="text/css" />
+    <link rel="stylesheet" href="./stylesheets/index.css">
+    <style>
+        @import url('./stylesheets/customStyle.css');
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+</head>
+
+<body id="root">
+    <!--編輯人員注意:
+    水平尋覽條須於手機與電腦版分別設定!
+    -->
+    <div class="ui tablet computer only padded grid">
+        <div class="ui top fixed borderless inverted fluid menu" id="headderBar">
+            <div class="ui container">
+                <a class="header item">成功大學數學系圖書室</a>
+                <div class="right menu">
+                    <a class="item">成大首頁</a>
+                    <a class="item">數學系網站</a>
+                    <a class="item">成大總圖</a>
+                    <div class="item">
+                        <form class="ui form">
+                            <div class="inline fields">
+                                <div class="field">
+                                    <div class="ui icon input">
+                                        <input type="text" placeholder="Search...">
+                                        <i class="inverted circular search link icon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui mobile only padded grid">
+        <div class="ui top fixed borderless fluid inverted huge menu" id="headderBar">
+            <a class="header item">成功大學數學系圖書室</a>
+            <div class="right menu">
+                <div class="item">
+                    <button class="ui icon toggle basic inverted button">
+                        <i class="content icon"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="ui vertical borderless inverted fluid menu">
+                <a class="item">成大首頁</a>
+                <a class="item">數學系網站</a>
+                <a class="item">成大總圖</a>
+                <div class="item">
+                    <form class="ui form">
+                        <div class="field">
+                            <div class="ui icon input">
+                                <input type="text" placeholder="Search...">
+                                <i class="inverted circular search link icon"></i>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui top attached button">網格之前的按鈕</div>
+    <div class="ui grid">
+        <div class="sixteen wide column">
+            <!-- Slider main container -->
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide"><img class="ui fluid image"
+                            src="./static/images/wireframe/square-image.png">
+                    </div>
+                    <div class="swiper-slide"><img class="ui fluid image"
+                            src="./static/images/wireframe/square-image.png">
+                    </div>
+                    <div class="swiper-slide"><img class="ui fluid image"
+                            src="./static/images/wireframe/square-image.png">
+                    </div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                <!-- If we need scrollbar -->
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </div>
+        <div class="ten wide column"></div>
+        <div class="six wide column"></div>
+    </div>
+    <div class="ui grid">
+        <div class="sixteen wide column"></div>
+    </div>
+    <div class="ui bottom attached button">網格之後的按鈕</div>
+    <div id="aLotOFjs" style="display: none;">
+        <!--請注意:所有script的順序都是嚴格要求的-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+        <script src="./js/index.js"></script>
+        <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+        <script src="./js/swipe.js"></script>
+    </div>
+</body>
+
+</html>
