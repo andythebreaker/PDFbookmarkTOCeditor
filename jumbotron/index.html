@@ -10,12 +10,23 @@
     <meta name="author" content="修改的部分_作者1" />
     <meta name="theme-color" content="#DDB98B" />
     <title>成大數學系圖書館</title>
+    <!--css part start-->
+    <!--semantic-ui-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
         type="text/css" />
+    <!--default-->
     <link rel="stylesheet" href="./stylesheets/index.css">
+    <!--custom-->
     <style>
         @import url('./stylesheets/customStyle.css');
     </style>
+    <!--hover-css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.0/css/hover-min.css"
+        integrity="sha512-glciccPoOqr5mfDGmlJ3bpbvomZmFK+5dRARpt62nZnlKwaYZSfFpFIgUoD8ujqBw4TmPa/F3TX28OctJzoLfg=="
+        crossorigin="anonymous">
+    <!--custom swiper-->
+    <link rel="stylesheet" href="./stylesheets/swiper_part.css">
+    <!--css part end-->
 </head>
 
 <body id="root">
@@ -73,16 +84,195 @@
             </div>
         </div>
     </div>
+    <!--div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="./static/images/img1.jpg" alt="一張圖片">
+            </div>
+            <div class="swiper-slide">
+                <img src="./static/images/img2.jpg" alt="一張圖片">
+            </div>
+            <div class="swiper-slide">
+                <img src="./static/images/img3.jpg" alt="一張圖片">
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div-->
     <div class="ui massive message" id="masterVision">
         <div class="ui container">
-            <h1 class="ui huge header">圖書服務</h1>
+            <!-- Swiper -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide px-2 py-2">
+                        <div class="card hvr-grow-shadow card_boundary">
+                            <a href="#">
+
+                                <img src="./hand_book/hand_book_tmp(1).jpeg" class="card-img-top">
+                                </img>
+                                <div class="card-body" style="display:none;">
+                                </div>
+                            </a>
+                        </div>
+                        <a style="display:none;">Slide 1</a>
+                    </div>
+                    <div class="swiper-slide px-2 py-2">
+                        <div class="card hvr-grow-shadow card_boundary">
+                            <a href="#">
+
+                                <img src="./hand_book/hand_book_tmp(1).jpg" class="card-img-top">
+                                </img>
+                                <div class="card-body" style="display:none;">
+                                </div>
+                            </a>
+                        </div>
+                        <a style="display:none;">Slide 2</a>
+                    </div>
+                    <div class="swiper-slide px-2 py-2">
+                        <div class="card hvr-grow-shadow card_boundary">
+                            <a href="#">
+
+                                <img src="./hand_book/hand_book_tmp(2).jpg" class="card-img-top">
+                                </img>
+                                <div class="card-body" style="display:none;">
+                                </div>
+                            </a>
+                        </div>
+                        <a style="display:none;">Slide 3</a>
+                    </div>
+                    <div class="swiper-slide px-2 py-2">
+                        <div class="card hvr-grow-shadow card_boundary">
+                            <a href="#">
+
+                                <img src="./hand_book/hand_book_tmp(3).jpg" class="card-img-top">
+                                </img>
+                                <div class="card-body" style="display:none;">
+                                </div>
+                            </a>
+                        </div>
+                        <a style="display:none;">Slide 4</a>
+                    </div>
+                    <div class="swiper-slide px-2 py-2">
+                        <div class="card hvr-grow-shadow card_boundary">
+                            <a href="#">
+
+                                <img src="./hand_book/The_designer_did_not_give_the_picture(1).jpeg"
+                                    class="card-img-top">
+                                </img>
+                                <div class="card-body" style="display:none;">
+                                </div>
+                            </a>
+                        </div>
+                        <a style="display:none;">Slide 5</a>
+                    </div>
+                    <div class="swiper-slide px-2 py-2">
+                        <div class="card hvr-grow-shadow card_boundary">
+                            <a href="#">
+
+                                <img src="./hand_book/The_designer_did_not_give_the_picture(1).jpg"
+                                    class="card-img-top">
+                                </img>
+                                <div class="card-body" style="display:none;">
+                                </div>
+                            </a>
+                        </div>
+                        <a style="display:none;">Slide 6</a>
+                    </div>
+                    <div class="swiper-slide px-2 py-2">
+                        <div class="card hvr-grow-shadow card_boundary">
+                            <a href="#">
+
+                                <img src="./hand_book/The_designer_did_not_give_the_picture(1).png"
+                                    class="card-img-top">
+                                </img>
+                                <div class="card-body" style="display:none;">
+                                </div>
+                            </a>
+                        </div>
+                        <a style="display:none;">Slide 7</a>
+                    </div>
+                    <div class="swiper-slide px-2 py-2">
+                        <div class="card hvr-grow-shadow card_boundary">
+                            <a href="#">
+
+                                <img src="./hand_book/The_designer_did_not_give_the_picture(2).jpeg"
+                                    class="card-img-top">
+                                </img>
+                                <div class="card-body" style="display:none;">
+                                </div>
+                            </a>
+                        </div>
+                        <a style="display:none;">Slide 8</a>
+                    </div>
+                    <div class="swiper-slide px-2 py-2">
+                        <div class="card hvr-grow-shadow card_boundary">
+                            <a href="#">
+
+                                <img src="./hand_book/The_designer_did_not_give_the_picture(2).jpg"
+                                    class="card-img-top">
+                                </img>
+                                <div class="card-body" style="display:none;">
+                                </div>
+                            </a>
+                        </div>
+                        <a style="display:none;">Slide 9</a>
+                    </div>
+                    <div class="swiper-slide px-2 py-2">
+                        <div class="card hvr-grow-shadow card_boundary">
+                            <a href="#">
+
+                                <img src="./hand_book/The_designer_did_not_give_the_picture(2).png"
+                                    class="card-img-top">
+                                </img>
+                                <div class="card-body" style="display:none;">
+                                </div>
+                            </a>
+                        </div>
+                        <a style="display:none;">Slide 10</a>
+                    </div>
+                    <div class="swiper-slide px-2 py-2">
+                        <div class="card hvr-grow-shadow card_boundary">
+                            <a href="#">
+
+                                <img src="./hand_book/The_designer_did_not_give_the_picture(3).jpg"
+                                    class="card-img-top">
+                                </img>
+                                <div class="card-body" style="display:none;">
+                                </div>
+                            </a>
+                        </div>
+                        <a style="display:none;">Slide 11</a>
+                    </div>
+                    <div class="swiper-slide px-2 py-2">
+                        <div class="card hvr-grow-shadow card_boundary">
+                            <a href="#">
+
+                                <img src="./hand_book/The_designer_did_not_give_the_picture(3).png"
+                                    class="card-img-top">
+                                </img>
+                                <div class="card-body" style="display:none;">
+                                </div>
+                            </a>
+                        </div>
+                        <a style="display:none;">Slide 12</a>
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination" style="display:none;">
+                </div>
+                <!-- Add Arrows -->
+                <div class="swiper-button-next" style="display:none;">
+                </div>
+                <div class="swiper-button-prev" style="display:none;">
+                </div>
+            </div>
+            <!--h1 class="ui huge header">圖書服務</h1>
             <p>
                 This is a template for a simple marketing or informational website. It
                 includes a large callout called a jumbotron and three supporting
                 pieces of content. Use it as a starting point to create something more
                 unique.
             </p>
-            <button class="ui large primary button">瀏覽圖書目錄 &raquo;</button>
+            <button class="ui large primary button">瀏覽圖書目錄 &raquo;</button-->
         </div>
     </div>
     <div class="ui container">
@@ -146,12 +336,22 @@
             <a href="mailto:mathlib@math.ncku.edu.tw">服務信箱</a>
         </footer>
     </div>
+    <!--js part start-->
     <div id="aLotOFjs" style="display: none;">
         <!--請注意:所有script的順序都是嚴格要求的-->
+        <!--jquery-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!--semantic ui-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+        <!--default-->
         <script src="./js/index.js"></script>
+        <!--swiper-->
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js">
+        </script>
+        <!--init_swipe-->
+        <script src="./js/init_swipe.js"></script>
     </div>
+    <!--js part end-->
 </body>
 
 </html>
