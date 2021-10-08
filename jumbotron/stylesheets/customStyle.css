@@ -3,11 +3,7 @@
 }
 
 .ui.masterVision {
-    background-color: #DBC89A00;
+    background-color: #DBC89A;
     background-size: cover;
-    background-clip: padding-box;
-    background-origin: border-box;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     background-position: center;
 }
