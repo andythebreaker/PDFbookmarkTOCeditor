@@ -2,6 +2,12 @@
     background-image: linear-gradient(to bottom, #63914BFF 0, #467E2EFF 100%);
 }
 
-.masterVision {
-    background-color: #DBC89AFF;
+.ui.masterVision {
+    background-color: #DBC89A00;
+    background-size: cover;
+    background-clip: padding-box;
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
