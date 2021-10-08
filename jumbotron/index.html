@@ -16,6 +16,10 @@
     <style>
         @import url('./stylesheets/customStyle.css');
     </style>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <style>
+        @import url('./stylesheets/swipe.css');
+    </style>
 </head>
 
 <body id="root">
@@ -73,17 +77,69 @@
             </div>
         </div>
     </div>
-    <div class="ui massive message" id="masterVision">
-        <div class="ui container">
-            <h1 class="ui huge header">圖書服務</h1>
-            <p>
-                This is a template for a simple marketing or informational website. It
-                includes a large callout called a jumbotron and three supporting
-                pieces of content. Use it as a starting point to create something more
-                unique.
-            </p>
-            <button class="ui large primary button">瀏覽圖書目錄 &raquo;</button>
+    <div class="ui grid">
+        <div class="sixteen wide column">
+            <!-- Slider main container -->
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <div class="ui massive message masterVision" id="img1">
+                            <div class="ui container">
+                                <h1 class="ui huge header">圖書服務1</h1>
+                                <p>
+                                    This is a template for a simple marketing or informational website. It
+                                    includes a large callout called a jumbotron and three supporting
+                                    pieces of content. Use it as a starting point to create something more
+                                    unique.
+                                </p>
+                                <button class="ui large primary button">瀏覽圖書目錄 &raquo;</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="ui massive message masterVision" id="img2">
+                            <div class="ui container">
+                                <h1 class="ui huge header">圖書服務2</h1>
+                                <p>
+                                    This is a template for a simple marketing or informational website. It
+                                    includes a large callout called a jumbotron and three supporting
+                                    pieces of content. Use it as a starting point to create something more
+                                    unique.
+                                </p>
+                                <button class="ui large primary button">瀏覽圖書目錄 &raquo;</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="ui massive message masterVision" id="img3">
+                            <div class="ui container">
+                                <h1 class="ui huge header">圖書服務3</h1>
+                                <p>
+                                    This is a template for a simple marketing or informational website. It
+                                    includes a large callout called a jumbotron and three supporting
+                                    pieces of content. Use it as a starting point to create something more
+                                    unique.
+                                </p>
+                                <button class="ui large primary button">瀏覽圖書目錄 &raquo;</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                <!-- If we need scrollbar -->
+                <div class="swiper-scrollbar"></div>
+            </div>
         </div>
+        <div class="ten wide column"></div>
+        <div class="six wide column"></div>
     </div>
     <div class="ui container">
         <div class="ui three column stackable grid">
@@ -151,6 +207,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
         <script src="./js/index.js"></script>
+        <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+        <script src="./js/swipe.js"></script>
     </div>
 </body>
 
