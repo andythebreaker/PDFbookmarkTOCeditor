@@ -12,6 +12,7 @@
     <title>成大數學系圖書館</title>
     <link rel="stylesheet" href="./stylesheets/normalize.css">
     <link rel="stylesheet" href="./stylesheets/main.css">
+    <link rel="stylesheet" href="./stylesheets/open.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
         type="text/css" />
     <link rel="stylesheet" href="./stylesheets/index.css">
@@ -467,11 +468,75 @@
                         <a href="" class="item">Angular</a>
                         <a href="" class="item">Semantic-UI</a>
                     </div>
-                    <!--div class="ui segments moderns">
+                    <div class="ui segments moderns">
                     <div class="ui header segment">
-                        Picture Article
+                        <section class="openinghours">
+                            <div class="openinghourscontent section">
+                                <div class="header">
+                                     <h2>Opening hours</h2>
+                         <span id="open-status"><small class="openorclosed">We are</small></span>
+                        
+                                </div>
+                                <table class="opening-hours-table">
+                                    <tr id="Monday" itemprop="openingHours" title="Open Monday at 9am to 6pm">
+                                        <td>Monday</td>
+                                        <td class="opens">09:00</td>
+                                        <td>-</td>
+                                        <td class="closes">18:00</td>
+                                    </tr>
+                                    <tr id="Tuesday" itemprop="openingHours" title="Open Tuesday at 9am to 6pm">
+                                        <td>Tuesday</td>
+                                        <td class="opens">09:00</td>
+                                        <td>-</td>
+                                        <td class="closes">18:00</td>
+                                    </tr>
+                                    <tr id="Wednesday" itemprop="openingHours" title="Open Wednesday at 9am to 6pm">
+                                        <td>Wednesday</td>
+                                        <td class="opens">09:00</td>
+                                        <td>-</td>
+                                        <td class="closes">18:00</td>
+                                    </tr>
+                                    <tr id="Thursday" itemprop="openingHours" title="Open Thursday at 9am to 8pm">
+                                        <td>Thursday</td>
+                                        <td class="opens">09:00</td>
+                                        <td>-</td>
+                                        <td class="closes">20:00</td>
+                                    </tr>
+                                    <tr id="Friday" itemprop="openingHours" title="Open Friday at 9am to 6pm">
+                                        <td>Friday</td>
+                                        <td class="opens">09:00</td>
+                                        <td>-</td>
+                                        <td class="closes">18:00</td>
+                                    </tr>
+                                    <tr id="Saturday" itemprop="openingHours" title="Open Saturday at 10am to 6pm">
+                                        <td>Saturday</td>
+                                        <td class="opens">10:00</td>
+                                        <td>-</td>
+                                        <td class="closes">18:00</td>
+                                    </tr>
+                                    <tr id="Sunday" itemprop="openingHours" title="Open Sunday at 11am to 4pm">
+                                        <td>Sunday</td>
+                                        <td class="opens">11:00</td>
+                                        <td>-</td>
+                                        <td class="closes">16:00</td>
+                                    </tr>
+                                </table>
+                                <button style="cursor: pointer;" title="Make an Apointment Online" data-appointlet="u387">Make an Apointment Online</button>
+                                <script>
+                                    (function(e, t, n, r) {
+                                        if (e) return;
+                                        t._appt = true;
+                                        var i = n.createElement(r),
+                                            s = n.getElementsByTagName(r)[0];
+                                        i.async = true;
+                                        i.src = './js/https_dje0x8zlxc38k_cloudfront_net_loaders_s-min.js';
+                                        s.parentNode.insertBefore(i, s)
+                                    })(window._appt, window, document, "script")
+                                </script>
+                            </div>
+                        </section>
                     </div>
-                    <div class="ui segment">
+                    <!--div class="ui segment">
                         <div class="owl-carousel owl-theme owl-loaded" id="single-slider">
                             
                             
@@ -528,6 +593,7 @@
         <script src="./js/index.js"></script>
         <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
         <script src="./js/swipe.js"></script>
+        <script src="./js/open.js"></script>
     </div>
 </body>
 
