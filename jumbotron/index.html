@@ -301,8 +301,22 @@
     <div class="section two">
         <div class="ui container">
             <h1><i class="fork icon"></i> Contribute this Project</h1>
-            <a href="https://github.com/muhibbudins/moderns" target="_blank" class="ui massive inverted button">Download
-                Now!</a>
+            <!--div class="ui container">
+                <div class="ui tiny image bordered rounded" id="qrcode">
+                    <img src="./assets/Spinner-1s-200px.gif" class="qrcodeSpinner">
+                </div>
+                <a href="https://github.com/muhibbudins/moderns" target="_blank"
+                    class="ui massive inverted button">Download
+                    Now!</a>
+            </div-->
+            <div class="ui left labeled button" tabindex="0">
+                <a class="ui basic right pointing label">
+                    <div class="ui tiny image bordered rounded" id="qrcode">
+                        <img src="./assets/Spinner-1s-200px.gif" class="qrcodeSpinner">
+                    </div>
+                </a>
+                <div class="ui button massive"><i class="map marker alternate icon"></i> 地圖 &raquo;</div>
+            </div>
         </div>
     </div>
 
@@ -496,8 +510,7 @@
                                         <div class="shutdownName1" style="display:none;">休</div>
                                         <div class="shutdownName2" style="display:none;">館</div>
                                     </div>
-                                    <table
-                                        class="opening-hours-table ui celled table center aligned">
+                                    <table class="opening-hours-table ui celled table center aligned">
                                         <thead>
                                             <tr>
                                                 <th class="center aligned">星期</th>
@@ -632,6 +645,14 @@
             <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
             <script src="./js/swipe.js"></script>
             <script src="./js/open.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+                integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
+                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+            <script type="text/javascript">
+                new QRCode(document.getElementById("qrcode"), "https://nckumap.ncku.edu.tw/map.php?type=activity&bid=B014&rid=B01401001&floor=1F");
+                document.getElementsByClassName('qrcodeSpinner')[0].style.display = 'none';
+            </script>
         </div>
 </body>
 
