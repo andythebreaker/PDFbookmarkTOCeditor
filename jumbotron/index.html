@@ -25,6 +25,9 @@
     <style>
         @import url('./stylesheets/open.css');
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.0/css/hover-min.css"
+        integrity="sha512-glciccPoOqr5mfDGmlJ3bpbvomZmFK+5dRARpt62nZnlKwaYZSfFpFIgUoD8ujqBw4TmPa/F3TX28OctJzoLfg=="
+        crossorigin="anonymous">
 </head>
 
 <body id="root">
@@ -34,11 +37,11 @@
     <div class="ui tablet computer only padded grid">
         <div class="ui top fixed borderless inverted fluid menu" id="headderBar">
             <div class="ui container">
-                <a class="header item">成功大學數學系圖書室</a>
+                <a class="header item hvr-hang">成功大學數學系圖書室</a>
                 <div class="right menu">
-                    <a class="item">成大首頁</a>
-                    <a class="item">數學系網站</a>
-                    <a class="item">成大總圖</a>
+                    <a class="item hvr-hang">成大首頁</a>
+                    <a class="item hvr-hang">數學系網站</a>
+                    <a class="item hvr-hang">成大總圖</a>
                     <div class="item">
                         <form class="ui form">
                             <div class="inline fields">
@@ -300,23 +303,18 @@
 
     <div class="section two">
         <div class="ui container">
-            <h1><i class="fork icon"></i> Contribute this Project</h1>
-            <!--div class="ui container">
-                <div class="ui tiny image bordered rounded" id="qrcode">
-                    <img src="./assets/Spinner-1s-200px.gif" class="qrcodeSpinner">
-                </div>
-                <a href="https://github.com/muhibbudins/moderns" target="_blank"
-                    class="ui massive inverted button">Download
-                    Now!</a>
-            </div-->
-            <div class="ui left labeled button" tabindex="0">
-                <a class="ui basic right pointing label">
-                    <div class="ui tiny image bordered rounded" id="qrcode">
-                        <img src="./assets/Spinner-1s-200px.gif" class="qrcodeSpinner">
-                    </div>
-                </a>
-                <div class="ui button massive"><i class="map marker alternate icon"></i> 地圖 &raquo;</div>
-            </div>
+            <h1><i class="location arrow icon"></i> 成功大學數學系 系館一樓</h1>
+            <a class="ui basic massive image label brown hvr-grow-shadow" id="qrcode"
+                href="https://goo.gl/maps/bBXnC5XJRsmPSXUj6" target="_blank">
+                <!--這是一個地圖按鈕
+含有一個qrcode
+請用qrcodeMapButton.js啟用他
+需要semantic-ui與qrcode.js套件
+屬性href就是按鈕的連結
+內文是qrcode的內容
+author:andythebreaker-->
+                https://nckumap.ncku.edu.tw/map.php?type=activity&bid=B014&rid=B01401001&floor=1F
+            </a>
         </div>
     </div>
 
@@ -398,7 +396,11 @@
                                             ipsum
                                             iste ex. Quam reiciendis voluptatem reprehenderit natus aliquam dolore
                                             laudantium eaque praesentium ipsum itaque repellendus, nulla at error.Lorem
-                                            ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, nihil
+                                            ipsum dolor sit amet,
+                                            44444444444444444444444444444444444444444444444444444
+                                            444444444444444444444444444444444444444444444444444444444444444445555
+                                            555555555555555555555555555555
+                                            consectetur adipisicing elit. Perspiciatis, nihil
                                             consequatur! Vero illum illo, nesciunt, tempora accusamus praesentium
                                             sunt...
                                         </p>
@@ -648,11 +650,8 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
                 integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
                 crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="./js/qrcodeMapButton.js"></script>
 
-            <script type="text/javascript">
-                new QRCode(document.getElementById("qrcode"), "https://nckumap.ncku.edu.tw/map.php?type=activity&bid=B014&rid=B01401001&floor=1F");
-                document.getElementsByClassName('qrcodeSpinner')[0].style.display = 'none';
-            </script>
         </div>
 </body>
 

@@ -1,5 +1,5 @@
 #headderBar {
-    background-image: linear-gradient(to bottom, #63914BFF 0, #467E2EFF 100%);
+    background-image: linear-gradient(to bottom, rgb(80, 122, 57) 0%, rgb(25, 56, 12) 100%);
 }
 
 .ui.masterVision {
