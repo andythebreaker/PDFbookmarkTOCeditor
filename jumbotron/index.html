@@ -12,7 +12,6 @@
     <title>成大數學系圖書館</title>
     <link rel="stylesheet" href="./stylesheets/normalize.css">
     <link rel="stylesheet" href="./stylesheets/main.css">
-    <link rel="stylesheet" href="./stylesheets/open.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
         type="text/css" />
     <link rel="stylesheet" href="./stylesheets/index.css">
@@ -22,6 +21,9 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     <style>
         @import url('./stylesheets/swipe.css');
+    </style>
+    <style>
+        @import url('./stylesheets/open.css');
     </style>
 </head>
 
@@ -469,74 +471,107 @@
                         <a href="" class="item">Semantic-UI</a>
                     </div>
                     <div class="ui segments moderns">
-                    <div class="ui header segment">
-                        <section class="openinghours">
-                            <div class="openinghourscontent section">
-                                <div class="header">
-                                     <h2>Opening hours</h2>
-                         <span id="open-status"><small class="openorclosed">We are</small></span>
-                        
+                        <div class="ui header segment">
+                            <section class="openinghours">
+                                <!--https://codepen.io/bengoddard/pen/boeEy
+                                這是一個模組，修改自上方參考資料
+                                由andythebreaker修改
+                                須包含open.js、open.css
+                                使用semantic-ui
+                                -->
+                                <div class="openinghourscontent section">
+                                    <div class="header">
+                                        <!--h2>Opening hours</h2-->
+                                        <h2>開館時間</h2>
+                                        <div id="open-status" class="ui segment">
+                                            <small class="openorclosed">We are</small>
+                                        </div>
+
+                                    </div>
+                                    <div class="OpeningHoursChineseNameFormDefinitionCollection" style="display:none;">
+                                        <!--這裡不要動，這是"休館"字樣的中文字形，js沒有例外處理-->
+                                        <div class="shutdownName1" style="display:none;">休</div>
+                                        <div class="shutdownName2" style="display:none;">館</div>
+                                    </div>
+                                    <table
+                                        class="opening-hours-table ui collapsing celled table center aligned">
+                                        <thead>
+                                            <tr>
+                                                <th class="center aligned">星期</th>
+                                                <th colspan="3">開放時間</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr id="Monday" itemprop="openingHours" title="Open Monday at 9am to 6pm">
+                                                <td id="monday_chinese">一</td>
+                                                <td class="opens no_right_border">09:00</td>
+                                                <td class="no_right_border no_left_border">-</td>
+                                                <td class="closes no_left_border">18:00</td>
+                                            </tr>
+                                            <tr id="Tuesday" itemprop="openingHours" title="Open Tuesday at 9am to 6pm">
+                                                <td id="tuesday_chinese">二</td>
+                                                <td class="opens no_right_border">09:00</td>
+                                                <td class="no_right_border no_left_border">-</td>
+                                                <td class="closes no_left_border">18:00</td>
+                                            </tr>
+                                            <tr id="Wednesday" itemprop="openingHours"
+                                                title="Open Wednesday at 9am to 6pm">
+                                                <td id="wednesday_chinese">三</td>
+                                                <td class="opens no_right_border">09:00</td>
+                                                <td class="no_right_border no_left_border">-</td>
+                                                <td class="closes no_left_border">18:00</td>
+                                            </tr>
+                                            <tr id="Thursday" itemprop="openingHours"
+                                                title="Open Thursday at 9am to 8pm">
+                                                <td id="thursday_chinese">四</td>
+                                                <td class="opens no_right_border">09:00</td>
+                                                <td class="no_right_border no_left_border">-</td>
+                                                <td class="closes no_left_border">20:00</td>
+                                            </tr>
+                                            <tr id="Friday" itemprop="openingHours" title="Open Friday at 9am to 6pm">
+                                                <td id="friday_chinese">五</td>
+                                                <td class="opens no_right_border">09:00</td>
+                                                <td class="no_right_border no_left_border">-</td>
+                                                <td class="closes no_left_border">18:00</td>
+                                            </tr>
+                                            <!--如果當日閉館
+                                            class="no_right_border no_left_border"的地方
+                                            要添加class:shutdown
+                                            然後開館時間閉館時間就不重要了
+                                            -->
+                                            <tr id="Saturday" itemprop="openingHours"
+                                                title="Open Saturday at 10am to 11pm">
+                                                <td id="saturday_chinese">六</td>
+                                                <td class="opens no_right_border">10:00</td>
+                                                <td class="shutdown no_right_border no_left_border">-</td>
+                                                <td class="closes no_left_border">23:00</td>
+                                            </tr>
+                                            <tr id="Sunday" itemprop="openingHours" title="Open Sunday at 11am to 4pm">
+                                                <td id="sunday_chinese">日</td>
+                                                <td class="opens no_right_border">12:00</td>
+                                                <td class="shutdown no_right_border no_left_border">-</td>
+                                                <td class="closes no_left_border">16:00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!--按鈕已廢止-->
+                                    <button style="cursor: pointer;display:none;" title="Make an Apointment Online"
+                                        data-appointlet="u387">Make an Apointment Online</button>
+                                    <script>
+                                        (function (e, t, n, r) {
+                                            if (e) return;
+                                            t._appt = true;
+                                            var i = n.createElement(r),
+                                                s = n.getElementsByTagName(r)[0];
+                                            i.async = true;
+                                            i.src = './js/https_dje0x8zlxc38k_cloudfront_net_loaders_s-min.js';
+                                            s.parentNode.insertBefore(i, s)
+                                        })(window._appt, window, document, "script")
+                                    </script>
                                 </div>
-                                <table class="opening-hours-table">
-                                    <tr id="Monday" itemprop="openingHours" title="Open Monday at 9am to 6pm">
-                                        <td>Monday</td>
-                                        <td class="opens">09:00</td>
-                                        <td>-</td>
-                                        <td class="closes">18:00</td>
-                                    </tr>
-                                    <tr id="Tuesday" itemprop="openingHours" title="Open Tuesday at 9am to 6pm">
-                                        <td>Tuesday</td>
-                                        <td class="opens">09:00</td>
-                                        <td>-</td>
-                                        <td class="closes">18:00</td>
-                                    </tr>
-                                    <tr id="Wednesday" itemprop="openingHours" title="Open Wednesday at 9am to 6pm">
-                                        <td>Wednesday</td>
-                                        <td class="opens">09:00</td>
-                                        <td>-</td>
-                                        <td class="closes">18:00</td>
-                                    </tr>
-                                    <tr id="Thursday" itemprop="openingHours" title="Open Thursday at 9am to 8pm">
-                                        <td>Thursday</td>
-                                        <td class="opens">09:00</td>
-                                        <td>-</td>
-                                        <td class="closes">20:00</td>
-                                    </tr>
-                                    <tr id="Friday" itemprop="openingHours" title="Open Friday at 9am to 6pm">
-                                        <td>Friday</td>
-                                        <td class="opens">09:00</td>
-                                        <td>-</td>
-                                        <td class="closes">18:00</td>
-                                    </tr>
-                                    <tr id="Saturday" itemprop="openingHours" title="Open Saturday at 10am to 6pm">
-                                        <td>Saturday</td>
-                                        <td class="opens">10:00</td>
-                                        <td>-</td>
-                                        <td class="closes">18:00</td>
-                                    </tr>
-                                    <tr id="Sunday" itemprop="openingHours" title="Open Sunday at 11am to 4pm">
-                                        <td>Sunday</td>
-                                        <td class="opens">11:00</td>
-                                        <td>-</td>
-                                        <td class="closes">16:00</td>
-                                    </tr>
-                                </table>
-                                <button style="cursor: pointer;" title="Make an Apointment Online" data-appointlet="u387">Make an Apointment Online</button>
-                                <script>
-                                    (function(e, t, n, r) {
-                                        if (e) return;
-                                        t._appt = true;
-                                        var i = n.createElement(r),
-                                            s = n.getElementsByTagName(r)[0];
-                                        i.async = true;
-                                        i.src = './js/https_dje0x8zlxc38k_cloudfront_net_loaders_s-min.js';
-                                        s.parentNode.insertBefore(i, s)
-                                    })(window._appt, window, document, "script")
-                                </script>
-                            </div>
-                        </section>
-                    </div>
-                    <!--div class="ui segment">
+                            </section>
+                        </div>
+                        <!--div class="ui segment">
                         <div class="owl-carousel owl-theme owl-loaded" id="single-slider">
                             
                             
@@ -582,19 +617,19 @@
                         Other Content
                     </div>
                 </div-->
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div id="aLotOFjs" style="display: none;">
-        <!--請注意:所有script的順序都是嚴格要求的-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
-        <script src="./js/index.js"></script>
-        <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-        <script src="./js/swipe.js"></script>
-        <script src="./js/open.js"></script>
-    </div>
+        <div id="aLotOFjs" style="display: none;">
+            <!--請注意:所有script的順序都是嚴格要求的-->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+            <script src="./js/index.js"></script>
+            <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+            <script src="./js/swipe.js"></script>
+            <script src="./js/open.js"></script>
+        </div>
 </body>
 
 </html>
