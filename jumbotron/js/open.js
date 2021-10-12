@@ -31,6 +31,10 @@ if ($(currentDayID).children('.no_right_border.no_left_border').hasClass('shutdo
     $(currentDayID).children('.closes').text($(
         '.openinghours .openinghourscontent .OpeningHoursChineseNameFormDefinitionCollection .shutdownName2'
     ).text());
+    //使用以下式子來啟用行動裝置的表格支援
+    //document.getElementById("openTimeChartLoaded_target").classList.add("openTimeChart_loadded");
+    //console.log("opentime ok");
+    document.getElementById("openTimeChartLoaded_target").click();
 } else {
     var openTimeSplit = $(currentDayID).children('.opens').text().split(":");
 
@@ -55,4 +59,8 @@ if ($(currentDayID).children('.no_right_border.no_left_border').hasClass('shutdo
         $(".openorclosed").toggleClass("closed");
         //$("#open-status").toggleClass("negative");
     }
+    // console.log("opentime ok");
+     document.getElementById("openTimeChartLoaded_target").click();
+    //使用以下式子來啟用行動裝置的表格支援
+    //document.getElementById("openTimeChartLoaded_target").classList.add("openTimeChart_loadded");
 }
