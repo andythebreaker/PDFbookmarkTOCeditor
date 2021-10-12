@@ -15,3 +15,30 @@ function openTimeChartLoaded() {
 else {
     console.log("open time mobile support failed!");
 }*/
+function openTimeChartLoaded() {
+    var COC = document.getElementById('copyRightSidebar_opentime_cli');
+    if (COC) {
+        COC.innerHTML = document.getElementById('copyRightSidebar_opentime').innerHTML;
+///////////////////////////////////////////
+const regex = /[^a-zA-Z0-9\-_]id="([^ "]+)"/gm;
+const str = ;/*避免重複id */
+const subst = ` `;
+
+// The substituted value will be contained in the result variable
+const result = str.replace(regex, subst);
+
+console.log('Substitution result: ', result);
+
+//////////////////////////////////////////
+
+        var CRSC = document.getElementById('copyRightSidebar_opentime').classList;
+        for (var index_tmp = 0; index_tmp < CRSC.length; index_tmp++) {
+            COC.classList.add(CRSC[index_tmp]);
+        }/*finish all table copy*/ /*end of all js-if*/
+    } else {
+        colsole.log('[open time app] mobile copy failed!');
+    }
+}/*TODO:
+除去tr td改成grid div
+
+*/ 

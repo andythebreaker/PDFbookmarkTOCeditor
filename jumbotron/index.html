@@ -505,8 +505,7 @@ author:andythebreaker-->
 
                                     </div>
                                     <div class="OpeningHoursChineseNameFormDefinitionCollection" style="display:none;"
-                                        id="openTimeChartLoaded_target"
-                                        onclick="document.getElementById('copyRightSidebar_opentime_cli').innerHTML=document.getElementById('copyRightSidebar_opentime').innerHTML;var CRSC=document.getElementById('copyRightSidebar_opentime').classList;CRSC.forEach(function (item, i) {document.getElementById('copyRightSidebar_opentime_cli).classList.add(item);});">
+                                        id="openTimeChartLoaded_target" onclick="openTimeChartLoaded();">
                                         <!--這裡不要動，這是"休館"字樣的中文字形，js沒有例外處理-->
                                         <div class="shutdownName1" style="display:none;">休</div>
                                         <div class="shutdownName2" style="display:none;">館</div>
@@ -696,9 +695,9 @@ author:andythebreaker-->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
                 integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
                 crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-            <script src="./js/qrcodeMapButton.js"></script>
-            <!--ajax務必要放在最底下-->
+            <!--下2順序很重要-->
             <script src="./js/ajax_init.js"></script>
+            <script src="./js/qrcodeMapButton.js"></script>
         </div>
 </body>
 
