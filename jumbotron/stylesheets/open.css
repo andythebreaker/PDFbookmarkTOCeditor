@@ -149,3 +149,13 @@
 .openinghours .openinghourscontent .opening-hours-table .no_left_border {
     border-left: none;
 }
+
+/*mobile*/
+
+.openinghourscontent.section .ui.two.column.very.relaxed.grid .LBD {
+    border-left: 1vw solid #DDB98B;
+}
+
+.openinghourscontent.section .ui.two.column.very.relaxed.grid .RBD {
+    border-right: 1vw solid #DDB98B;
+}

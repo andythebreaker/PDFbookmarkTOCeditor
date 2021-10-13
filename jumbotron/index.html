@@ -469,7 +469,10 @@ author:andythebreaker-->
                         <a href="" class="item">Semantic-UI</a>
                     </div>
                     <div id="copyRightSidebar_opentime_cli">
-                        <!--佔位，誤移除-->
+                        <!--佔位，誤移除
+                        需要有ajax init .js
+                        與下方表格中的id='openTimeChartLoaded_target'
+                        -->
                     </div>
                 </div>
                 <div class="four wide column computer only">
@@ -481,7 +484,9 @@ author:andythebreaker-->
                         <a href="" class="item">Semantic-UI</a>
                     </div-->
                     <div id="copyRightSidebar_mobile2desktop_cli">
-                        <!--佔位，誤移除-->
+                        <!--佔位，誤移除
+                        需要有ajax init .js
+                        -->
                     </div>
                     <div class="ui segments moderns" id="copyRightSidebar_opentime">
                         <div class="ui header segment">
@@ -491,9 +496,6 @@ author:andythebreaker-->
                                 由andythebreaker修改
                                 須包含open.js、open.css
                                 使用semantic-ui
-                                TODO:表格部分
-                                ipad會出框
-                                手機板會跑版
                                 -->
                                 <div class="openinghourscontent section">
                                     <div class="header">
@@ -505,7 +507,7 @@ author:andythebreaker-->
 
                                     </div>
                                     <div class="OpeningHoursChineseNameFormDefinitionCollection" style="display:none;"
-                                        id="openTimeChartLoaded_target" onclick="openTimeChartLoaded();">
+                                        id="openTimeChartLoaded_target">
                                         <!--這裡不要動，這是"休館"字樣的中文字形，js沒有例外處理-->
                                         <div class="shutdownName1" style="display:none;">休</div>
                                         <div class="shutdownName2" style="display:none;">館</div>
@@ -557,7 +559,7 @@ author:andythebreaker-->
                                             Or
                                           </div>
                                     </div-->
-                                    <table class="opening-hours-table ui celled table center aligned">
+                                    <table class="opening-hours-table ui celled table center aligned" id="the_open_chart_data">
                                         <thead>
                                             <tr>
                                                 <th class="center aligned">星期</th>
@@ -691,13 +693,13 @@ author:andythebreaker-->
             <script src="./js/index.js"></script>
             <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
             <script src="./js/swipe.js"></script>
-            <script src="./js/open.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
                 integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
                 crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="./js/qrcodeMapButton.js"></script>
             <!--下2順序很重要-->
             <script src="./js/ajax_init.js"></script>
-            <script src="./js/qrcodeMapButton.js"></script>
+            <script src="./js/open.js"></script>
         </div>
 </body>
 

@@ -35,6 +35,8 @@ if ($(currentDayID).children('.no_right_border.no_left_border').hasClass('shutdo
     //document.getElementById("openTimeChartLoaded_target").classList.add("openTimeChart_loadded");
     //console.log("opentime ok");
     document.getElementById("openTimeChartLoaded_target").click();
+//    console.log("wtf2");
+
 } else {
     var openTimeSplit = $(currentDayID).children('.opens').text().split(":");
 
@@ -61,6 +63,8 @@ if ($(currentDayID).children('.no_right_border.no_left_border').hasClass('shutdo
     }
     // console.log("opentime ok");
      document.getElementById("openTimeChartLoaded_target").click();
+//     console.log("wtf2");
+
     //使用以下式子來啟用行動裝置的表格支援
     //document.getElementById("openTimeChartLoaded_target").classList.add("openTimeChart_loadded");
 }
