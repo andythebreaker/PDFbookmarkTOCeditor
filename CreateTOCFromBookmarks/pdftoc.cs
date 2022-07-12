@@ -175,10 +175,11 @@ namespace CreateTOCFromBookmarks
                 return true;
             }
         }
-        public void finish() {
+        public string finish() {
             document.Save(TOCTTL);
             document.Close(true);
-            System.Diagnostics.Process.Start(TOCTTL);
+            //System.Diagnostics.Process.Start(TOCTTL);
+            return TOCTTL;
         }
         private void rst() {
             yPos = 30;

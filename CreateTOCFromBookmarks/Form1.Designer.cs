@@ -67,6 +67,16 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tPDF3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.allToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.advancedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeBlankPageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.debugToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeBlankPageToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -79,8 +89,11 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
+            this.debugToolStripMenuItem,
             this.outputToolStripMenuItem,
-            this.debugToolStripMenuItem});
+            this.settingToolStripMenuItem,
+            this.advancedToolStripMenuItem,
+            this.debugToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1139, 28);
@@ -174,8 +187,8 @@
             this.toolStripMenuItem2,
             this.tPDF3ToolStripMenuItem});
             this.debugToolStripMenuItem.Name = "debugToolStripMenuItem";
-            this.debugToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
-            this.debugToolStripMenuItem.Text = "debug";
+            this.debugToolStripMenuItem.Size = new System.Drawing.Size(128, 24);
+            this.debugToolStripMenuItem.Text = "engineer mode";
             // 
             // treeViewTopToolStripMenuItem
             // 
@@ -414,7 +427,8 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
-            this.toolStripStatusLabel2});
+            this.toolStripStatusLabel2,
+            this.toolStripStatusLabel3});
             this.statusStrip1.Location = new System.Drawing.Point(0, 650);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1139, 24);
@@ -440,6 +454,86 @@
             this.tPDF3ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.tPDF3ToolStripMenuItem.Text = "TPDF3";
             this.tPDF3ToolStripMenuItem.Click += new System.EventHandler(this.tPDF3ToolStripMenuItem_Click);
+            // 
+            // settingToolStripMenuItem
+            // 
+            this.settingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem3,
+            this.toolStripMenuItem4,
+            this.toolStripMenuItem5,
+            this.allToolStripMenuItem});
+            this.settingToolStripMenuItem.Name = "settingToolStripMenuItem";
+            this.settingToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
+            this.settingToolStripMenuItem.Text = "setting";
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(216, 26);
+            this.toolStripMenuItem3.Text = "1";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(216, 26);
+            this.toolStripMenuItem4.Text = "2";
+            this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(216, 26);
+            this.toolStripMenuItem5.Text = "3";
+            this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
+            // 
+            // allToolStripMenuItem
+            // 
+            this.allToolStripMenuItem.Checked = true;
+            this.allToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.allToolStripMenuItem.Name = "allToolStripMenuItem";
+            this.allToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.allToolStripMenuItem.Text = "all";
+            this.allToolStripMenuItem.Click += new System.EventHandler(this.allToolStripMenuItem_Click);
+            // 
+            // toolStripStatusLabel3
+            // 
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(24, 19);
+            this.toolStripStatusLabel3.Text = "-1";
+            // 
+            // advancedToolStripMenuItem
+            // 
+            this.advancedToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.removeBlankPageToolStripMenuItem});
+            this.advancedToolStripMenuItem.Name = "advancedToolStripMenuItem";
+            this.advancedToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
+            this.advancedToolStripMenuItem.Text = "Advanced";
+            this.advancedToolStripMenuItem.Click += new System.EventHandler(this.advancedToolStripMenuItem_Click);
+            // 
+            // removeBlankPageToolStripMenuItem
+            // 
+            this.removeBlankPageToolStripMenuItem.Checked = true;
+            this.removeBlankPageToolStripMenuItem.CheckOnClick = true;
+            this.removeBlankPageToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.removeBlankPageToolStripMenuItem.Name = "removeBlankPageToolStripMenuItem";
+            this.removeBlankPageToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
+            this.removeBlankPageToolStripMenuItem.Text = "remove blank page";
+            // 
+            // debugToolStripMenuItem1
+            // 
+            this.debugToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.removeBlankPageToolStripMenuItem1});
+            this.debugToolStripMenuItem1.Name = "debugToolStripMenuItem1";
+            this.debugToolStripMenuItem1.Size = new System.Drawing.Size(67, 24);
+            this.debugToolStripMenuItem1.Text = "debug";
+            // 
+            // removeBlankPageToolStripMenuItem1
+            // 
+            this.removeBlankPageToolStripMenuItem1.CheckOnClick = true;
+            this.removeBlankPageToolStripMenuItem1.Name = "removeBlankPageToolStripMenuItem1";
+            this.removeBlankPageToolStripMenuItem1.Size = new System.Drawing.Size(218, 26);
+            this.removeBlankPageToolStripMenuItem1.Text = "remove blank page";
             // 
             // Form1
             // 
@@ -521,6 +615,16 @@
         private System.Windows.Forms.ToolStripMenuItem scrollToBotomToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem tPDF3ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem settingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem allToolStripMenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
+        private System.Windows.Forms.ToolStripMenuItem advancedToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem removeBlankPageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem debugToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem removeBlankPageToolStripMenuItem1;
     }
 }
 

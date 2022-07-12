@@ -10,6 +10,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -757,7 +758,23 @@ private void SetTreeViewScrollPos(TreeView treeView, Point scrollPosition)
         private void PrintRecursive2(TreeNode treeNode)
         {
             // do something here...
-            pt01.add(treeNode.Text, treeNode.Tag.ToString(), treeNode.Level);
+            if (settingCKi()<=0||treeNode.Level<= settingCKi()) {
+                DataRow ppp = pgdt.Rows.Find(treeNode.Name);
+                string tmpPP = treeNode.Tag.ToString();
+                if (!(ppp is null))//TODO SEL
+                {
+                    tmpPP += "/" + (Math.Round((ppp["NUMMO"] is IConvertible) ? ((IConvertible)ppp["NUMMO"]).ToDouble(null) : -1.0d).ToString());
+                    /*sb.AppendLine($"PG-CustID_：{ppp["CustID_"]}");
+                    sb.AppendLine($"PG-ORG：{ppp["ORG"]}");
+                    sb.AppendLine($"PG-numS：{ppp["numS"]}");
+                    sb.AppendLine($"PG-ob：{ppp["ob"]}");
+                    sb.AppendLine($"PG-NUM：{ppp["NUM"]}");
+                    sb.AppendLine($"PG-NUMMO：{ppp["NUMMO"]}");
+                    sb.AppendLine($"PG-NUMR：{Math.Round((ppp["NUMMO"] is IConvertible) ? ((IConvertible)ppp["NUMMO"]).ToDouble(null) : -1.0d)}");
+              */
+                }
+                pt01.add(treeNode.Text, tmpPP, treeNode.Level);
+            }
             //!!
 
             // Visit each node recursively.  
@@ -778,7 +795,7 @@ private void SetTreeViewScrollPos(TreeView treeView, Point scrollPosition)
             }
         }
 
-        private void PrintNonRecursive2(TreeNode treeNode)
+    /*    private void PrintNonRecursive2(TreeNode treeNode)
         {
             if (treeNode != null)
             {
@@ -810,14 +827,121 @@ private void SetTreeViewScrollPos(TreeView treeView, Point scrollPosition)
             {
                 PrintNonRecursive2(n);
             }
-        }
+        }*/
         private pdftoc pt01 = null;
         private void pdfToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pt01 = new pdftoc("WWW");
             CallRecursive2(treeView1);
-            pt01.finish();
+            string tmpfn = pt01.finish();
+            //TODO rm old
+            removeBlankPdfPages(tmpfn,
+                "RE_TableOfContents" + DateTime.Now.ToString(@"__MM_dd_yyyy__hh_mm_ss_tt") + ".pdf",
+             removeBlankPageToolStripMenuItem1.Checked   );
         }
-        
+        public static void removeBlankPdfPages(string pdfSourceFile, string pdfDestinationFile, bool debug)
+        {
+
+            // step 0: set minimum page size
+            const int blankPdfsize = 20;
+
+            // step 1: create new reader
+            var r = new iTextSharp.text.pdf.PdfReader(pdfSourceFile);
+            var raf = new iTextSharp.text.pdf.RandomAccessFileOrArray(pdfSourceFile);
+            var document = new iTextSharp.text.Document(r.GetPageSizeWithRotation(1));
+
+            // step 2: create a writer that listens to the document
+            var writer = new iTextSharp.text.pdf.PdfCopy(document, new FileStream(pdfDestinationFile, FileMode.Create));
+
+            // step 3: we open the document
+            document.Open();
+
+            // step 4: we add content
+            iTextSharp.text.pdf.PdfImportedPage page = null;
+
+            //loop through each page and if the bs is larger than 20 than we know it is not blank.
+            //if it is less than 20 than we don't include that blank page.
+            for (var i = 1; i <= r.NumberOfPages; i++)
+            {
+                //get the page content
+                byte[] bContent = r.GetPageContent(i, raf);
+                var bs = new MemoryStream();
+
+                //write the content to an output stream
+                bs.Write(bContent, 0, bContent.Length);
+                Console.WriteLine("page content length of page {0} = {1}", i, bs.Length);
+
+                //add the page to the new pdf
+                if (bs.Length > blankPdfsize)
+                {
+                    page = writer.GetImportedPage(r, i);
+                    writer.AddPage(page);
+                }
+                bs.Close();
+            }
+            //close everything
+            document.Close();
+            writer.Close();
+            raf.Close();
+            r.Close();
+        }
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+                        settingSetNull();
+            toolStripMenuItem3.Checked = true; settingCK();
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            settingSetNull(); toolStripMenuItem4.Checked = true; settingCK();
+        }
+
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            settingSetNull(); toolStripMenuItem5.Checked = true; settingCK();
+        }
+
+        private void allToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            settingSetNull(); allToolStripMenuItem.Checked = true;
+            settingCK();
+        }
+
+        private void settingSetNull() {
+            toolStripMenuItem3.Checked = false;
+            toolStripMenuItem4.Checked = false;
+            toolStripMenuItem5.Checked = false;
+            allToolStripMenuItem.Checked = false;
+        }
+        private void settingCK()
+        {
+            if (toolStripMenuItem3.Checked) {
+                toolStripStatusLabel3.Text = "1";
+            }
+            else if (
+toolStripMenuItem4.Checked) { toolStripStatusLabel3.Text = "2"; }
+            else if (
+toolStripMenuItem5.Checked) { toolStripStatusLabel3.Text = "3"; }
+            else if (
+allToolStripMenuItem.Checked) { toolStripStatusLabel3.Text = "0"; }
+            else { toolStripStatusLabel3.Text = "-1"; }
+        }
+        private int settingCKi()
+        {
+            int right = 0;  //Or you may want to set it to some other default value
+
+            if (!int.TryParse(toolStripStatusLabel3.Text.Trim(), out right))
+            {
+                // Do some error handling here.. Maybe tell the user that data is invalid.
+                 right = -1;
+            }
+            return right;
+            // do the rest of your coding..  
+        }
+
+        private void advancedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
