@@ -39,6 +39,12 @@
             this.outputToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pdfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.debugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.treeViewTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.downToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.scrollToBotomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -57,9 +63,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.treeView1 = new System.Windows.Forms.TreeView();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tPDF3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -68,10 +79,11 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
-            this.outputToolStripMenuItem});
+            this.outputToolStripMenuItem,
+            this.debugToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1139, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(1139, 28);
             this.menuStrip1.TabIndex = 20;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -87,14 +99,14 @@
             // loadPdfToolStripMenuItem
             // 
             this.loadPdfToolStripMenuItem.Name = "loadPdfToolStripMenuItem";
-            this.loadPdfToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.loadPdfToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.loadPdfToolStripMenuItem.Text = "load pdf";
             this.loadPdfToolStripMenuItem.Click += new System.EventHandler(this.loadPdfToolStripMenuItem_Click);
             // 
             // loadTreeToolStripMenuItem
             // 
             this.loadTreeToolStripMenuItem.Name = "loadTreeToolStripMenuItem";
-            this.loadTreeToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.loadTreeToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.loadTreeToolStripMenuItem.Text = "load tree";
             this.loadTreeToolStripMenuItem.Click += new System.EventHandler(this.loadTreeToolStripMenuItem_Click);
             // 
@@ -141,7 +153,7 @@
             // pictureToolStripMenuItem
             // 
             this.pictureToolStripMenuItem.Name = "pictureToolStripMenuItem";
-            this.pictureToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.pictureToolStripMenuItem.Size = new System.Drawing.Size(132, 26);
             this.pictureToolStripMenuItem.Text = "picture";
             this.pictureToolStripMenuItem.Click += new System.EventHandler(this.pictureToolStripMenuItem_Click);
             // 
@@ -150,6 +162,55 @@
             this.pdfToolStripMenuItem.Name = "pdfToolStripMenuItem";
             this.pdfToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.pdfToolStripMenuItem.Text = "pdf";
+            this.pdfToolStripMenuItem.Click += new System.EventHandler(this.pdfToolStripMenuItem_Click);
+            // 
+            // debugToolStripMenuItem
+            // 
+            this.debugToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.treeViewTopToolStripMenuItem,
+            this.yToolStripMenuItem,
+            this.downToolStripMenuItem,
+            this.scrollToBotomToolStripMenuItem,
+            this.toolStripMenuItem2,
+            this.tPDF3ToolStripMenuItem});
+            this.debugToolStripMenuItem.Name = "debugToolStripMenuItem";
+            this.debugToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
+            this.debugToolStripMenuItem.Text = "debug";
+            // 
+            // treeViewTopToolStripMenuItem
+            // 
+            this.treeViewTopToolStripMenuItem.Name = "treeViewTopToolStripMenuItem";
+            this.treeViewTopToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.treeViewTopToolStripMenuItem.Text = "x, y";
+            this.treeViewTopToolStripMenuItem.Click += new System.EventHandler(this.treeViewTopToolStripMenuItem_Click);
+            // 
+            // yToolStripMenuItem
+            // 
+            this.yToolStripMenuItem.Name = "yToolStripMenuItem";
+            this.yToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.yToolStripMenuItem.Text = "y++";
+            this.yToolStripMenuItem.Click += new System.EventHandler(this.yToolStripMenuItem_Click);
+            // 
+            // downToolStripMenuItem
+            // 
+            this.downToolStripMenuItem.Name = "downToolStripMenuItem";
+            this.downToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.downToolStripMenuItem.Text = "down";
+            this.downToolStripMenuItem.Click += new System.EventHandler(this.downToolStripMenuItem_Click);
+            // 
+            // scrollToBotomToolStripMenuItem
+            // 
+            this.scrollToBotomToolStripMenuItem.Name = "scrollToBotomToolStripMenuItem";
+            this.scrollToBotomToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.scrollToBotomToolStripMenuItem.Text = "scroll to botom";
+            this.scrollToBotomToolStripMenuItem.Click += new System.EventHandler(this.scrollToBotomToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(216, 26);
+            this.toolStripMenuItem2.Text = "90";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // checkBox1
             // 
@@ -204,7 +265,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(711, 19);
+            this.button1.Location = new System.Drawing.Point(627, 314);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(142, 44);
@@ -284,7 +345,7 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(612, 19);
+            this.button9.Location = new System.Drawing.Point(587, 516);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(75, 23);
             this.button9.TabIndex = 18;
@@ -313,7 +374,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(1017, 125);
+            this.button7.Location = new System.Drawing.Point(904, 499);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(93, 56);
             this.button7.TabIndex = 13;
@@ -342,10 +403,43 @@
             // treeView1
             // 
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView1.Location = new System.Drawing.Point(0, 27);
+            this.treeView1.Location = new System.Drawing.Point(0, 28);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(1139, 647);
+            this.treeView1.ShowNodeToolTips = true;
+            this.treeView1.Size = new System.Drawing.Size(1139, 622);
             this.treeView1.TabIndex = 5;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.toolStripStatusLabel2});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 650);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1139, 24);
+            this.statusStrip1.TabIndex = 21;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(158, 19);
+            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(158, 19);
+            this.toolStripStatusLabel2.Text = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Click += new System.EventHandler(this.toolStripStatusLabel2_Click);
+            // 
+            // tPDF3ToolStripMenuItem
+            // 
+            this.tPDF3ToolStripMenuItem.Name = "tPDF3ToolStripMenuItem";
+            this.tPDF3ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.tPDF3ToolStripMenuItem.Text = "TPDF3";
+            this.tPDF3ToolStripMenuItem.Click += new System.EventHandler(this.tPDF3ToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -371,6 +465,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.statusStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
@@ -379,6 +474,8 @@
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -414,6 +511,16 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.ToolStripMenuItem debugToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem treeViewTopToolStripMenuItem;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripMenuItem yToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem downToolStripMenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.ToolStripMenuItem scrollToBotomToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem tPDF3ToolStripMenuItem;
     }
 }
 

@@ -11,6 +11,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -20,6 +21,15 @@ namespace CreateTOCFromBookmarks
 {
     public partial class Form1 : Form
     {
+        [DllImport("user32.dll", CharSet = CharSet.Unicode)]
+        public static extern int GetScrollPos(IntPtr hWnd, int nBar);
+
+        [DllImport("user32.dll", CharSet = CharSet.Unicode)]
+        public static extern int SetScrollPos(IntPtr hWnd, int nBar, int nPos, bool bRedraw);
+
+        private const int SB_HORZ = 0x0;
+        private const int SB_VERT = 0x1;
+
         public Form1()
         {
             InitializeComponent();
@@ -687,5 +697,127 @@ namespace CreateTOCFromBookmarks
         {
             button8.PerformClick();
         }
+
+        private void treeViewTopToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = GetTreeViewScrollPos(treeView1).ToString();
+        }
+
+        /* A method which returns a point for the current scroll position:
+         * https://stackoverflow.com/questions/332788/maintain-scroll-position-of-treeview
+        */
+        private Point GetTreeViewScrollPos(TreeView treeView)
+        {
+            return new Point(
+                GetScrollPos(treeView.Handle, SB_HORZ),
+                GetScrollPos(treeView.Handle, SB_VERT));
+        }
+
+        private void yToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Point ptmp = new Point(0, 25);
+            SetTreeViewScrollPos(treeView1, ptmp);
+        }
+
+        /*A method to set the scroll position:
+        */
+private void SetTreeViewScrollPos(TreeView treeView, Point scrollPosition)
+        {
+            SetScrollPos(treeView.Handle, SB_HORZ, scrollPosition.X, true);
+            SetScrollPos(treeView.Handle, SB_VERT, scrollPosition.Y, true);
+        }
+
+        private void downToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = treeView1.GetNodeCount(true).ToString();
+           //    Point ptmp = new Point(0, treeView1.SelectedNode.Index+1);
+          //  treeView1.SelectedNode = treeView1.GetNodeAt();
+        }
+
+        private void toolStripStatusLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void scrollToBotomToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            treeView1.Nodes[treeView1.Nodes.Count - 1].EnsureVisible();
+            treeView1.Refresh();
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+          //  treeView1.lay
+        }
+
+        private void tPDF3ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            button3.PerformClick();
+        }
+        private void PrintRecursive2(TreeNode treeNode)
+        {
+            // do something here...
+            pt01.add(treeNode.Text, treeNode.Tag.ToString(), treeNode.Level);
+            //!!
+
+            // Visit each node recursively.  
+            foreach (TreeNode tn in treeNode.Nodes)
+            {
+                PrintRecursive2(tn);
+            }
+        }
+
+        // Call the procedure using the TreeView.  
+        private void CallRecursive2(TreeView treeView)
+        {
+            // Print each node recursively.  
+            foreach (TreeNode n in treeView.Nodes)
+            {
+                //recursiveTotalNodes++;
+                PrintRecursive2(n);
+            }
+        }
+
+        private void PrintNonRecursive2(TreeNode treeNode)
+        {
+            if (treeNode != null)
+            {
+                //Using a queue to store and process each node in the TreeView
+                Queue<TreeNode> staging = new Queue<TreeNode>();
+                staging.Enqueue(treeNode);
+
+                while (staging.Count > 0)
+                {
+                    treeNode = staging.Dequeue();
+
+                    // do something here...
+                    pt01.add(treeNode.Text, treeNode.Tag.ToString(), treeNode.Level);
+                    //!!
+
+                    foreach (TreeNode node in treeNode.Nodes)
+                    {
+                        staging.Enqueue(node);
+                    }
+                }
+            }
+        }
+
+        // Call the procedure using the TreeView.  
+        private void CallNonRecursive2(TreeView treeView)
+        {
+            // Print each node.
+            foreach (TreeNode n in treeView.Nodes)
+            {
+                PrintNonRecursive2(n);
+            }
+        }
+        private pdftoc pt01 = null;
+        private void pdfToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pt01 = new pdftoc("WWW");
+            CallRecursive2(treeView1);
+            pt01.finish();
+        }
+        
     }
 }
