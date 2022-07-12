@@ -76,7 +76,7 @@ function initTable() {
                 align: 'center',
                 valign: 'middle'
             }, {
-                title: '架號',
+                title: '流水號',
                 field: 'id',
                 rowspan: 2,
                 align: 'center',
@@ -87,7 +87,7 @@ function initTable() {
             
             
             , {
-                title: 'ISSN',
+                title: '登入號',
                 field: 'id',
                 rowspan: 2,
                 align: 'center',
@@ -95,7 +95,7 @@ function initTable() {
                 sortable: true,
                 footerFormatter: totalTextFormatter
             }, {
-                title: '狀況',
+                title: '書名',
                 field: 'id',
                 rowspan: 2,
                 align: 'center',
@@ -103,7 +103,7 @@ function initTable() {
                 sortable: true,
                 footerFormatter: totalTextFormatter
             }, {
-                title: '電子資源',
+                title: '作者',
                 field: 'id',
                 rowspan: 2,
                 align: 'center',
@@ -111,31 +111,14 @@ function initTable() {
                 sortable: true,
                 footerFormatter: totalTextFormatter
             }, {
-                title: '紙本資源',
+                title: '索書號',
                 field: 'id',
                 rowspan: 2,
                 align: 'center',
                 valign: 'middle',
                 sortable: true,
                 footerFormatter: totalTextFormatter
-            }, {
-                title: '卷期-年代',
-                field: 'id',
-                rowspan: 2,
-                align: 'center',
-                valign: 'middle',
-                sortable: true,
-                footerFormatter: totalTextFormatter
-            }, {
-                title: '備註',
-                field: 'id',
-                rowspan: 2,
-                align: 'center',
-                valign: 'middle',
-                sortable: true,
-                footerFormatter: totalTextFormatter
-            }
-            
+            }            
             
             , {
                 title: '資料細節',
@@ -150,7 +133,7 @@ function initTable() {
                 align: 'center'
             }, {
                 field: 'price',
-                title: '存在年分',
+                title: '上架年月',
                 sortable: true,
                 align: 'center',
                 footerFormatter: totalPriceFormatter
